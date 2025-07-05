@@ -1,0 +1,84 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+
+@custom-variant dark (&:is(.dark *));
+
+/* Reset global mais específico */
+html, body {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+@theme inline {
+  --font-family-sans: "Cormorant", ui-sans-serif, system-ui, sans-serif;
+
+  /* Cores principais do site */
+  --color-primary: #3B7A57;        /* Verde tartaruga - Foco visual principal */
+  --color-secondary: #A5D6A7;      /* Verde limão suave - Para suavizar e dar leveza */
+  --color-accent: #FFD54F;         /* Amarelo ouro desaturado - Remete à energia, sol, juventude */
+  --color-dark: #1B4D3E;           /* Verde floresta profundo - Para botões, menus, barras */
+  --color-light: #FAF8F0;          /* Areia clara - Neutro leve, ótimo como fundo */
+  --color-texto: #000000;           /* Cinza grafite suave - Alta legibilidade */
+  --color-background: #FAF8F0;
+}
+
+@layer utilities {
+  .font-cormorant {
+    font-family: "Cormorant", serif;
+  }
+
+  /* Classes utilitárias para as cores */
+  .bg-primary { background-color: var(--color-primary); }
+  .bg-secondary { background-color: var(--color-secondary); }
+  .bg-accent { background-color: var(--color-accent); }
+  .bg-dark { background-color: var(--color-dark); }
+  .bg-light { background-color: var(--color-light); }
+  .bg-background { background-color: var(--color-background); }
+
+  .text-primary { color: var(--color-primary); }
+  .text-secondary { color: var(--color-secondary); }
+  .text-accent { color: var(--color-accent); }
+  .text-dark { color: var(--color-dark); }
+  .text-light { color: var(--color-light); }
+  .text-text { color: var(--color-text); }
+
+  .border-primary { border-color: var(--color-primary); }
+  .border-secondary { border-color: var(--color-secondary); }
+  .border-accent { border-color: var(--color-accent); }
+  .border-dark { border-color: var(--color-dark); }
+  .border-light { border-color: var(--color-light); }
+
+  /* Efeitos premium personalizados */
+  .shadow-3xl {
+    box-shadow: 0 35px 60px -12px rgba(0, 0, 0, 0.25);
+  }
+
+  .backdrop-blur-sm {
+    backdrop-filter: blur(8px);
+  }
+
+  /* Animações personalizadas */
+  @keyframes float {
+    0%, 100% { transform: translateY(0px); }
+    50% { transform: translateY(-10px); }
+  }
+
+  .animate-float {
+    animation: float 3s ease-in-out infinite;
+  }
+
+  @keyframes glow {
+    0%, 100% { box-shadow: 0 0 20px rgba(59, 122, 87, 0.3); }
+    50% { box-shadow: 0 0 40px rgba(59, 122, 87, 0.6); }
+  }
+
+  .animate-glow {
+    animation: glow 2s ease-in-out infinite;
+  }
+}
