@@ -1,3 +1,5 @@
+import Threads from "../../../blocks/Backgrounds/Threads/Threads";
+
 const Header = () => {
   return (
     <div className="relative py-20 px-16">
@@ -131,6 +133,15 @@ const Header = () => {
           <button className="px-8 py-4 border-2 border-primary text-primary font-semibold rounded-2xl hover:bg-primary hover:text-light transition-all duration-300">
             Ver Demonstração
           </button>
+        </div>
+
+        <div style={{ width: '100%', height: '600px', position: 'relative', marginTop: '-180px' }}>
+          <Threads
+            color={[0.4, 0.7, 1.0]}
+            amplitude={1}
+            distance={0}
+            enableMouseInteraction={true}
+          />
         </div>
       </div>
     </div>
